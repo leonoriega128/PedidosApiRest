@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ardalis.Specification" Version="7.0.0" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.7.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.7.1" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\" />
+    <Folder Include="Feautres\Clientes\Commands\DeleteClientCommand\" />
+    <Folder Include="Feautres\Clientes\Commands\DeleteCourseCommand\" />
+    <Folder Include="Feautres\Clientes\Commands\DeleteContractCommand\" />
+    <Folder Include="Feautres\Clientes\Commands\DeleteItemCommand\" />
+    <Folder Include="Feautres\Clientes\Commands\UpdateItemCommand\" />
+    <Folder Include="Feautres\Clientes\Commands\UpdateContractCommand\" />
+    <Folder Include="Feautres\Clientes\Commands\UpdateCourseCommand\" />
+    <Folder Include="Feautres\Clientes\Commands\UpdateClientCommand\" />
+    <Folder Include="Feautres\Clientes\Queries\GetAllClient\" />
+    <Folder Include="Filters\" />
+  </ItemGroup>
+
+</Project>
