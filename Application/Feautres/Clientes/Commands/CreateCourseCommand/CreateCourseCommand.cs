@@ -1,4 +1,7 @@
-﻿using Application.Wrappers;
+﻿using Application.Interfaces;
+using Application.Wrappers;
+using AutoMapper;
+using Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -23,5 +26,25 @@ namespace Application.Feautres.Clientes.Commands.CreateCourseCommand
         public string SchoolLocation { get; set; }
         public int Commission { get; set; }
         public double Total { get; set; }
+    }
+
+    public class CreateCourseCommandHandler : IRequestHandler<CreateCourseCommand, Response<int>>
+    {
+        private readonly IRepositoryAsync<Course> _repositoryAsync;
+
+        private readonly IMapper _mapper;
+        public CreateCourseCommandHandler(IRepositoryAsync<Course> repositoryAsync, IMapper mapper)
+        {
+            _repositoryAsync = repositoryAsync;
+            _mapper = mapper;
+        }
+
+
+        public async Task<Response<int>> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
+        {
+            var nuevoRegistro = _mapper.Map<Course>(request);
+            var data = await _repositoryAsync.AddAsync(nuevoRegistro);
+            return new Response<int>(data.Id);
+        }
     }
 }

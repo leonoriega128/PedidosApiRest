@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
     <Folder Include="Feautres\Clientes\Commands\DeleteClientCommand\" />
     <Folder Include="Feautres\Clientes\Commands\DeleteCourseCommand\" />
     <Folder Include="Feautres\Clientes\Commands\DeleteContractCommand\" />
@@ -27,6 +26,10 @@
     <Folder Include="Feautres\Clientes\Commands\UpdateClientCommand\" />
     <Folder Include="Feautres\Clientes\Queries\GetAllClient\" />
     <Folder Include="Filters\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>
