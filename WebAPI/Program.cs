@@ -1,6 +1,7 @@
 using Application;
 using Persistence;
 using Shared;
+using WebAPI.Extensions;
 
 namespace WebAPI
 {
@@ -34,7 +35,7 @@ namespace WebAPI
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            app.UseErrorHandlingMiddleware();
             var summaries = new[]
             {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
