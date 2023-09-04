@@ -1,9 +1,7 @@
 using Application;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using Application.Interfaces;
+using Application.Services;
 using Persistence;
-using Persistence.Interfaces;
-using Persistence.Services;
 using Shared;
 using WebAPI.Extensions;
 
@@ -26,9 +24,14 @@ builder.Services.AddPersistenceInfraestructure(configuration);
 builder.Services.AddApiVersioningExtensions();
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
-builder.Services.AddPersistenceInfraestructure(configuration);
 
+builder.Services.AddPersistenceInfraestructure(configuration);
 builder.Services.AddScoped<ICourseServices, CourseServices>();
+
+builder.Services.AddCors(policyBuilder =>
+    policyBuilder.AddDefaultPolicy(policy =>
+        policy.WithOrigins("*").AllowAnyHeader().AllowAnyHeader())
+);
 
 
 var app = builder.Build();
@@ -39,6 +42,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

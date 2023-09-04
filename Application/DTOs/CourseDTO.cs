@@ -8,6 +8,7 @@ namespace Application.DTOs
 {
     public class CourseDTO
     {
+        public int id {  get; set; }
         public string CourseCode { get; set; }
         public DateTime DischargeDate { get; set; }
         public bool State { get; set; }

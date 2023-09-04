@@ -16,20 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Feautres\Clientes\Commands\DeleteClientCommand\" />
-    <Folder Include="Feautres\Clientes\Commands\DeleteCourseCommand\" />
-    <Folder Include="Feautres\Clientes\Commands\DeleteContractCommand\" />
-    <Folder Include="Feautres\Clientes\Commands\DeleteItemCommand\" />
-    <Folder Include="Feautres\Clientes\Commands\UpdateItemCommand\" />
-    <Folder Include="Feautres\Clientes\Commands\UpdateContractCommand\" />
-    <Folder Include="Feautres\Clientes\Commands\UpdateCourseCommand\" />
-    <Folder Include="Feautres\Clientes\Commands\UpdateClientCommand\" />
-    <Folder Include="Feautres\Clientes\Queries\GetAllClient\" />
     <Folder Include="Filters\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Persistence\Persistence.csproj" />
   </ItemGroup>
 
 </Project>

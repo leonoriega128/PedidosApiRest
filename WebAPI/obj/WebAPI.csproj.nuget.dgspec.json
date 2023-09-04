@@ -31,7 +31,14 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\leo_N\\source\\repos\\PedidosApiRest\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\leo_N\\source\\repos\\PedidosApiRest\\Domain\\Domain.csproj"
+              },
+              "C:\\Users\\leo_N\\source\\repos\\PedidosApiRest\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\Users\\leo_N\\source\\repos\\PedidosApiRest\\Persistence\\Persistence.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -176,9 +183,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\leo_N\\source\\repos\\PedidosApiRest\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\leo_N\\source\\repos\\PedidosApiRest\\Application\\Application.csproj"
-              },
               "C:\\Users\\leo_N\\source\\repos\\PedidosApiRest\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\leo_N\\source\\repos\\PedidosApiRest\\Domain\\Domain.csproj"
               }
@@ -355,6 +359,10 @@
             "MediatR": {
               "target": "Package",
               "version": "[12.1.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[5.1.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

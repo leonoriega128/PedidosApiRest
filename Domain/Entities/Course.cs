@@ -23,4 +23,28 @@ namespace Domain.Entities
         public int Commission { get ; set; }
         public double Total { get; set; }
     }
+    public class CourseGetData
+    {
+        public string CourseCode { get; set; }
+        public DateTime DischargeDate { get; set;}
+        public string CollegeName { get; set; }
+        public string CollegeLevel { get; set; }
+        public string CollegeCourse { get; set; }
+        public string SchoolLocation { get; set; }
+        public List<Order> Results { get; set; }
+
+      
+        public double Total { get; set; }
+        public DateTime DeliveryDate { get; set; }
+
+
+    }
+    public class Order
+    {
+        public int NumberGraduates { get; set; }
+        public string ItemName { get; set; }
+        public double Price { get; set; }
+        public double Total { get; set; }
+
+    }
 }

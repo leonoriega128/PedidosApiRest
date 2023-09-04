@@ -8,6 +8,7 @@ namespace Application.DTOs
 {
     public class ContractCDTO
     {
+        public int ID {  get; set; }
         public int ContractId { get; set; }
         public int ItemId { get; set; }
         public DateTime? CreatedDate { get; set; } = default(DateTime?);

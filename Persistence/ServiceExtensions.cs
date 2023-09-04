@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Contexts;
+using Persistence.Interfaces;
 using Persistence.Repository;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System;
@@ -23,7 +24,12 @@ namespace Persistence
                 b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             #region Repositories
-            services.AddTransient(typeof(IRepositoryAsync<>), typeof(MyRepositoryAsync<>));
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            //services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<IContractCRepository, ContractCRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<IDressItemRepository, DressItemRepository>();
             #endregion
         }
     }

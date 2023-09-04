@@ -21,6 +21,9 @@ namespace Persistence.Contexts
             _dateTime = dateTime;
         }
         public DbSet<ContractC> Contracts { get; set; }
+        public DbSet<Course> Course { get; set; }
+        public DbSet<DressItem> DressItems { get; set; }
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             foreach (var entry in ChangeTracker.Entries<AuditableBaseEntity>())
